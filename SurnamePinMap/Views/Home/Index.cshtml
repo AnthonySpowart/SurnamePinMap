@@ -2,5 +2,39 @@
 
 <div id='map'></div>
 <script>
-    mapbox.auto('map', 'aspowart.map-aw52lc92');
+
+    var map = L.mapbox.map('map', 'aspowart.map-aw52lc92').setView([19.808, -124.102], 2);
+
+    var pins = {
+        "type": "FeatureCollection",
+        "features": [
+      {"type": "Feature",
+        "properties": {
+              "FirstName": "Anthony",
+              "LastName": "Spowart"},
+          "geometry": {
+              "type": "Point",
+              "coordinates": [-79.38892, 43.64999]
+          }
+      },
+      {
+          "type": "Feature",
+          "properties": {
+              "FirstName": "Tony",
+              "LastName": "Spowart"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [-187.38075, -43.53859]
+          }
+      }
+        ]
+    };
+
+    map.featureLayer.setGeoJSON(pins);
+
+    map.featureLayer.eachLayer(function (layer) {
+        var content = '<h1>Name: ' + layer.feature.properties.FirstName + ' ' + layer.feature.properties.LastName + '<\/h1>';
+        layer.bindPopup(content);
+    });
 </script>

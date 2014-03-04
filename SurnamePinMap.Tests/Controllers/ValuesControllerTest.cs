@@ -17,7 +17,7 @@ namespace SurnamePinMap.Tests.Controllers
         public void Get()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            PinController controller = new PinController();
 
             // Act
             IEnumerable<string> result = controller.Get();
@@ -33,7 +33,7 @@ namespace SurnamePinMap.Tests.Controllers
         public void GetById()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            PinController controller = new PinController();
 
             // Act
             string result = controller.Get(5);
@@ -46,7 +46,7 @@ namespace SurnamePinMap.Tests.Controllers
         public void Post()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            PinController controller = new PinController();
 
             // Act
             controller.Post("value");
@@ -58,7 +58,7 @@ namespace SurnamePinMap.Tests.Controllers
         public void Put()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            PinController controller = new PinController();
 
             // Act
             controller.Put(5, "value");
@@ -70,7 +70,7 @@ namespace SurnamePinMap.Tests.Controllers
         public void Delete()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            PinController controller = new PinController();
 
             // Act
             controller.Delete(5);
